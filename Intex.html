@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harshita Creation</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #faf7ef;
+      color: #243b2c;
+    }
+    header {
+      background: #173d2b;
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+    }
+    header h1 {
+      margin: 0;
+      font-family: Georgia, serif;
+      letter-spacing: 1px;
+    }
+    header p { margin-bottom: 0; }
+    nav {
+      background: #e9dfca;
+      padding: 13px;
+      text-align: center;
+    }
+    nav a {
+      color: #173d2b;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      padding: 45px 20px;
+      text-align: center;
+      background: #f0e7d6;
+    }
+    .hero h2 {
+      font: 36px Georgia, serif;
+      margin: 0 0 12px;
+    }
+    .btn {
+      display: inline-block;
+      background: #173d2b;
+      color: white;
+      padding: 12px 18px;
+      margin-top: 12px;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 16px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: white;
+      padding: 18px;
+      border: 1px solid #e1d8c8;
+      border-radius: 6px;
+    }
+    .card h3 { font-family: Georgia, serif; }
+    .price { font-size: 20px; font-weight: bold; }
+    .note { color: #68685e; font-size: 13px; }
+    footer {
+      text-align: center;
+      background: #173d2b;
+      color: white;
+      padding: 25px 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HARSHITA CREATION</h1>
+    <p>BAGRU · JAIPUR · HAND BLOCK PRINTS</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <h2>Tradition, Printed by Hand.</h2>
+    <p>Discover beautiful hand block printed suits, sarees and fabrics from Bagru, Jaipur.</p>
+    <a class="btn" href="#products">Explore Collection</a>
+  </section>
+
+  <section class="container" id="products">
+    <h2 style="text-align:center">Our Collection</h2>
+    <p style="text-align:center">Retail and wholesale enquiries welcome.</p>
+
+    <div class="products">
+      <div class="card">
+        <h3>Cotton Suit Set with Kota Doria Dupatta</h3>
+        <p>Vanaspati print · Unstitched set</p>
+        <p class="price">₹950</p>
+        <p class="note">Shipping extra. Confirm availability before ordering.</p>
+        <a class="btn product-link" data-product="Cotton Suit Set with Kota Doria Dupatta - ₹950" href="#contact">Enquire on WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <h3>Mull Cotton Hand Block Print Saree</h3>
+        <p>6.5 metres with blouse piece</p>
+        <p class="price">₹725</p>
+        <p class="note">Shipping extra. Confirm availability before ordering.</p>
+        <a class="btn product-link" data-product="Mull Cotton Hand Block Print Saree - ₹725" href="#contact">Enquire on WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <h3>Linen Cotton Suit Set</h3>
+        <p>Hand block printed fabric collection</p>
+        <p class="price">Price on request</p>
+        <a class="btn product-link" data-product="Linen Cotton Suit Set - please share price" href="#contact">Ask Price</a>
+      </div>
+
+      <div class="card">
+        <h3>Hand Block Print Fabrics</h3>
+        <p>Traditional prints for boutiques and retailers</p>
+        <p class="price">Price on request</p>
+        <a class="btn product-link" data-product="Hand Block Print Fabrics - please share catalogue and rates" href="#contact">Ask for Catalogue</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" id="about">
+    <h2>About Harshita Creation</h2>
+    <p>Harshita Creation Bagru presents traditional hand block printed suits, sarees and fabrics inspired by the textile heritage of Bagru, Jaipur. We welcome individual buyers, boutiques, resellers and wholesale enquiries.</p>
+  </section>
+
+  <section class="container" id="contact">
+    <h2>Contact Us</h2>
+    <p>For product details, current stock, wholesale rates and shipping, contact us on WhatsApp.</p>
+    <a class="btn" id="whatsapp" href="#">Chat on WhatsApp</a>
+    <p class="note">Please replace the WhatsApp number in the code before publishing.</p>
+  </section>
+
+  <footer>
+    <strong>Harshita Creation</strong>
+    <p>Hand Block Prints · Bagru, Jaipur, Rajasthan</p>
+    <small>© 2026 Harshita Creation</small>
+  </footer>
+
+  <script>
+    // Replace with your WhatsApp number: country code + number, digits only.
+    const WHATSAPP_NUMBER = "916375369208";
+
+    function waLink(message) {
+      return "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message);
+    }
+
+    document.getElementById("whatsapp").href = waLink(
+      "Hello Harshita Creation Bagru, please share your product catalogue and wholesale rates."
+    );
+
+    document.querySelectorAll(".product-link").forEach(function(link) {
+      link.href = waLink(
+        "Hello Harshita Creation Bagru, I am interested in " +
+        link.dataset.product + ". Please share details and availability."
+      );
+    });
+  </script>
+</body>
+</html>
